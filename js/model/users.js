@@ -58,6 +58,9 @@ app.service('Users', function() {
     users[id-1].age=age;
     console.log(users[id-1]);
   };
-
+  
+  this.get = function(id){
+  return users[id-1];
+}
 
 });
