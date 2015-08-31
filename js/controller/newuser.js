@@ -2,7 +2,7 @@
  * Created by Sunny on 2015/8/20.
  */
 app.controller('newUser', function($scope,Users) {
-   $scope.users = Users.list();
+  
 
     $scope.incomplete = true;
     $scope.fName = '';
