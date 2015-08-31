@@ -3,24 +3,20 @@
  */
 app.controller('changeUser', function($scope, $routeParams,Users) {
     var id = $routeParams.id;
-    $scope.users = Users.list();
+    $scope.user = Users.get(id);
 
 
-    $scope.fName = '';
-    $scope.lName = '';
-    $scope.gender = '';
-    $scope.age = '';
+    
     $scope.passw1='';
     $scope.passw2='';
     $scope.error=false;
     $scope.incomplete=false;
 
 
-
-    $scope.fName = $scope.users[id-1].fName;
-    $scope.lName = $scope.users[id-1].lName;
-    $scope.gender = $scope.users[id-1].gender;
-    $scope.age = $scope.users[id-1].age;
+  $scope.fName = $scope.user.fName;
+    $scope.lName = $scope.user.lName;
+    $scope.gender = $scope.user.gender;
+    $scope.age = $scope.user.age;
 
     $scope.editUser = function(){
         Users.edit(id);
@@ -50,10 +46,10 @@ app.controller('changeUser', function($scope, $routeParams,Users) {
 
 
     $scope.saveChange = function() {
-        $scope.users[id-1].fName = $scope.fName;
-        $scope.users[id-1].lName = $scope.lName;
-        $scope.users[id-1].gender = $scope.gender;
-        $scope.users[id-1].age = $scope.age;
+        $scope.user.fName = $scope.fName;
+        $scope.user.lName = $scope.lName;
+        $scope.user.gender = $scope.gender;
+        $scope.user.age = $scope.age;
         $scope.edit = false;
         $scope.delete = false;
         $scope.incomplete = true;
